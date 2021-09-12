@@ -13,6 +13,13 @@ public class Main {
 
         // Test task 3
         doubleUpElemLess6InArray();
+
+        // Test task 4
+        fillDiagonalWith1(1);
+        fillDiagonalWith1(2);
+        fillDiagonalWith1(3);
+        fillDiagonalWith1(4);
+        fillDiagonalWith1(5);
     }
 
     /*
@@ -60,5 +67,27 @@ public class Main {
                 array[i] = array[i] * 2;
         }
         System.out.println("Output array = " + Arrays.toString(array));
+    }
+
+    /*
+    4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),и с помощью цикла(-ов)
+    заполнить его диагональные элементы единицами (можно только одну из диагоналей, если обе сложно). Определить
+    элементы одной из диагоналей можно по следующему принципу: индексы таких элементов равны, то есть [0][0], [1][1],
+    [2][2], …, [n][n];
+    */
+    public static void fillDiagonalWith1(int n) {
+        System.out.println("fillDiagonalWith1");
+        if (n < 1)
+            return;
+
+        int[][] array = new int[n][n];
+
+        System.out.println("Input array  = " + Arrays.deepToString(array));
+
+        for(int i = 0; i < n; i++) {
+            array[i][i] = 1;
+            array[i][n - 1 - i] = 1;
+        }
+        System.out.println("Output array = " + Arrays.deepToString(array));
     }
 }
