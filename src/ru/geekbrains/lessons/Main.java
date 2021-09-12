@@ -10,6 +10,9 @@ public class Main {
 
         // Test task 2
         initArray();
+
+        // Test task 3
+        doubleUpElemLess6InArray();
     }
 
     /*
@@ -40,6 +43,21 @@ public class Main {
 
         for(int i = 0; i < array.length; i++) {
             array[i] = i + 1;
+        }
+        System.out.println("Output array = " + Arrays.toString(array));
+    }
+
+    /*
+    3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
+    */
+    public static void doubleUpElemLess6InArray() {
+        System.out.println("doubleUpElemLess6InArray");
+        int[] array = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
+        System.out.println("Input array  = " + Arrays.toString(array));
+
+        for(int i = 0; i < array.length; i++) {
+            if ( array[i] < 6 )
+                array[i] = array[i] * 2;
         }
         System.out.println("Output array = " + Arrays.toString(array));
     }
