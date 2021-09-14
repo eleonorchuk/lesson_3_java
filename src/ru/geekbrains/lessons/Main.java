@@ -33,6 +33,22 @@ public class Main {
 
         // Test task 6
         minMaxElements();
+
+        // Test task 7
+        boolean res = checkBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{1, 1, 1, 2, 1});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{1, 1, 1, 1, 1});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{2});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{3,4});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{3,4,7});
+        System.out.println("result is:" + res);
+        res = checkBalance(new int[]{3,4,7,69,5,78});
+        System.out.println("result is:" + res);
     }
 
 
@@ -144,6 +160,38 @@ public class Main {
         }
         System.out.println("min  = " + min);
         System.out.println("max  = " + max);
+    }
+
+    /*
+    7. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true,
+    если в массиве есть место, в котором сумма левой и правой части массива равны.
+    **Примеры:
+    checkBalance([2, 2, 2, 1, 2, 2, ||| 10, 1]) → true, т.е. 2 + 2 + 2 + 1 + 2 + 2 = 10 + 1
+    checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1
+    граница показана символами |||, эти символы в массив не входят и не имеют никакого отношения к ИЛИ.
+    */
+    public static boolean checkBalance(int[] arr) {
+        System.out.println("checkBalance");
+        System.out.println("Input array  = " + Arrays.toString(arr));
+
+        if (arr.length < 2)
+            return false;
+        int sumLeft = arr[0];
+        int sumRight = arr[arr.length - 1];
+
+        for(int i = 1, j = arr.length - 2; i <= j; )
+        {
+            if (sumLeft < sumRight) {
+                sumLeft += arr[i];
+                i++;
+            }
+            else
+            {
+                sumRight += arr[j];
+                j--;
+            }
+        }
+        return  sumLeft == sumRight;
     }
 }
 
