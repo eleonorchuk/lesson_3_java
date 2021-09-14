@@ -30,6 +30,9 @@ public class Main {
         System.out.println("result is:" + Arrays.toString(result));
         result = acceptingTwoArguments(5,10);
         System.out.println("result is:" + Arrays.toString(result));
+
+        // Test task 6
+        minMaxElements();
     }
 
 
@@ -118,6 +121,29 @@ public class Main {
 
         Arrays.fill(arr, initialValue);
         return arr;
+    }
+
+    /*
+    Задать одномерный массив и найти в нем минимальный и максимальный элементы
+    */
+    public static void minMaxElements() {
+        System.out.println("minMaxElements");
+
+        int[] arr = new int[]{100, 1, -98, 90, 555, 909};
+        System.out.println("Input array  = " + Arrays.toString(arr));
+
+        int min = arr[0];
+        int max = arr[0];
+
+        for(int i = 1; i < arr.length; ++i)
+        {
+            if (arr[i] > max)
+                max = arr[i];
+            if (arr[i] < min)
+                min = arr[i];
+        }
+        System.out.println("min  = " + min);
+        System.out.println("max  = " + max);
     }
 }
 
