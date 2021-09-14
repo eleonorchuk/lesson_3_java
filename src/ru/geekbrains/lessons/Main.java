@@ -20,7 +20,18 @@ public class Main {
         fillDiagonalWith1(3);
         fillDiagonalWith1(4);
         fillDiagonalWith1(5);
+
+        // Test task 5
+        int[] result = acceptingTwoArguments(10,5);
+        System.out.println("result is:" + Arrays.toString(result));
+        result = acceptingTwoArguments(0,11);
+        System.out.println("result is:" + Arrays.toString(result));
+        result = acceptingTwoArguments(-1,234);
+        System.out.println("result is:" + Arrays.toString(result));
+        result = acceptingTwoArguments(5,10);
+        System.out.println("result is:" + Arrays.toString(result));
     }
+
 
     /*
     1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
@@ -90,4 +101,25 @@ public class Main {
         }
         System.out.println("Output array = " + Arrays.deepToString(array));
     }
+
+    /*
+    5. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int
+    длиной len, каждая ячейка которого равна initialValue;
+    */
+    public static int[] acceptingTwoArguments(int len, int initialValue) {
+        System.out.println("acceptingTwoArguments");
+        System.out.println("len = " + len);
+        System.out.println("initialValue = " + initialValue);
+
+        if (len < 1)
+            return new int[0];
+
+        int[] arr = new int[len];
+
+        Arrays.fill(arr, initialValue);
+        return arr;
+    }
 }
+
+
+
